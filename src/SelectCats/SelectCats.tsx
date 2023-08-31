@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import './SelectCats.scss'
 type Props = {
   fetchCats: (categories: string[]) => void
