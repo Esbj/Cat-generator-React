@@ -1,10 +1,10 @@
-form {
-  button {
-    margin-top: 2rem;
-  }
-  div {
-    margin: 0 auto;
-    align-content: center;
-    max-width: 50%;
-  }
+.checkbox-holder {
+  margin: auto;
+  display: flex;
+  max-width: 50%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+button {
+  margin-top: 2rem;
 }
