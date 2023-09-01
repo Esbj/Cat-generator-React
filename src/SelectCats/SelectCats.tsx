@@ -2,13 +2,14 @@ import { useState } from 'react'
 import './SelectCats.scss'
 type Props = {
   fetchCats: (categories: string[]) => void
+  clearCatImages: () => void
 }
 type Checkbox = {
   selected: boolean,
   name: string,
   icon: string
 }
-export default function SelectCats({ fetchCats }: Props) {
+export default function SelectCats({ fetchCats, clearCatImages }: Props) {
   const [checkboxes, setCheckboxes] = useState<Checkbox[]>([
     { selected: false, name: "hats", icon: "🎩" },
     { selected: false, name: "space", icon: "🌌" },
@@ -29,6 +30,7 @@ export default function SelectCats({ fetchCats }: Props) {
     setCheckboxes(newCheckboxes);
   };
   const handleSubmit = () => {
+    clearCatImages()
     const categories: string[] = []
     checkboxes.map(checkbox => {
       checkbox.selected && categories.push(checkbox.name)
@@ -56,21 +58,3 @@ export default function SelectCats({ fetchCats }: Props) {
     </>
   )
 }
-
-// const [selectedValues, setSelectedValues] = useState([""])
-// async function getSelectedCheckbox(formData: FormData) {
-//   for (const [name, value] of formData.entries()) {
-//     if (value === 'on') {
-//       setSelectedValues([...selectedValues, name]);
-//     }
-//   }
-//   return selectedValues
-// }
-
-// const handleFormChange = (event: React.ChangeEvent<HTMLFormElement>) => {
-//   const formData = new FormData(event.currentTarget);
-
-//   getSelectedCheckbox(formData)
-//   console.log(selectedValues)
-
-// }
