@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import SelectCats from './SelectCats/SelectCats'
+import CatGallery from './CatGallery/CatGallery';
 const api_url = "https://api.thecatapi.com/v1/images/search"
 const api_key = "&api_key=live_Wg9vMl1FRnMcvYGi5AWc5F1Afxoax8QkjKjtZJW6eN0VI29W7OdLiDexi2P4Pth5";
 interface Categories {
@@ -45,6 +46,7 @@ function App() {
         <h1>CAT GENERATOR</h1>
       </div>
       <SelectCats clearCatImages={clearCatImageState} fetchCats={fetchCats} />
+      <CatGallery images={catImages} />
     </>
   )
 }
